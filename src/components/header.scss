@@ -1,0 +1,46 @@
+.logo {
+  overflow: hidden;
+  margin-left: 10%;
+}
+
+.headerMain {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  height: 100px;
+}
+
+.headerMainRight {
+  display: flex;
+  align-items: flex-end;
+  flex-direction: column;
+  justify-content: center;
+  width: 60%;
+  height: 100%;
+}
+
+.headerMainLeft {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  justify-content: center;
+  width: 40%;
+  height: 100%;
+}
+
+.searchBar {
+  padding: 10px;
+  width: 70%;
+}
+
+.ant-divider-horizontal {
+  margin: 2px 0;
+}
+
+.headerLink {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: center;
+  padding-right: 10%;
+}
