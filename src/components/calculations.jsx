@@ -189,6 +189,7 @@ export default function calculateRes(
     jixing.concat(BigTable[weizhi][5].substring(2, 9)),
     BigTable[weizhi][0],
     diandongjixuanxxingjieguo,
+    shuangqu,
   ];
 }
 

@@ -1,11 +1,12 @@
 import Header from "../components/header";
 import calculateRes from "../components/calculations";
-import { Button } from "antd";
+import { Button, Descriptions } from "antd";
 import "./result-page.scss";
 import { useNavigate } from "react-router-dom";
 
 export default function ResultPage() {
   const resData = JSON.parse(localStorage.getItem("res"));
+  console.log(resData);
   const navigate = useNavigate();
 
   const res = calculateRes(
@@ -46,16 +47,29 @@ export default function ResultPage() {
             </div>
             <div className="selection-section-body">
               <div className="display-body">
-                <p>
-                  输出选型设备 : {res[0]} - {resData.touweilunzhongxinju}m -{" "}
-                  {resData.shusongliang}t/h - 双驱 - 入生料磨(料) - B01深灰色
-                </p>
-                <p>链条型号 ：{res[1]} </p>
-                <p>减速机型号 ：B4SH20-125-DS/BN 各一台 </p>
-                <p>电动机型号 ：{res[2]} </p>
-                <p>联轴器型号 ：YOX600 减:90X165 电:95X170 2台 上海交华 </p>
+                <Descriptions bordered>
+                  <Descriptions.Item label="设备型号">
+                    {res[0]} - {resData.touweilunzhongxinju}m -{" "}
+                    {resData.shusongliang}t/h -{" "}
+                    {res[3] ? "双驱" : resData["zhuangpeixingshi"]} -
+                    入生料磨(料) - B01深灰色
+                  </Descriptions.Item>
+                  <Descriptions.Item label="链条型号">
+                    {res[1]}
+                  </Descriptions.Item>
+                  <Descriptions.Item label="减速机型号">
+                    B4SH20-125-DS/BN 各一台
+                  </Descriptions.Item>
+                  <Descriptions.Item label="电动机型号">
+                    {res[2]}
+                  </Descriptions.Item>
+                  <Descriptions.Item label="联轴器型号">
+                    YOX600 减:90X165 电:95X170 2台 上海交华
+                  </Descriptions.Item>
+                </Descriptions>
+
                 <Button
-                  style={{ width: "30%" }}
+                  style={{ width: "30%", marginTop: "15px" }}
                   onClick={() => {
                     navigate("/selection");
                   }}
